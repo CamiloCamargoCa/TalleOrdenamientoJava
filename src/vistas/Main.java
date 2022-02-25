@@ -15,15 +15,22 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IOException {
         
+        //array inicializado null, el que toma arraglos de la lectura txt y pasa la data a la clase de ordenamiento de numero
         int arrayData[];
-        final String URL = "C:\\Users\\desar\\OneDrive\\Escritorio\\uu2022_1\\PruebasVerSoftware\\Corte1\\Numeros - copia.txt";
-//        final String URL = "C:\\Users\\desar\\OneDrive\\Escritorio\\uu2022_1\\PruebasVerSoftware\\Corte1\\pruebita.txt";
         
+        //url de documento txt
+        final String URL = "C:\\Users\\desar\\OneDrive\\Documentos\\NetBeansProjects\\PracticaProgramacion\\src\\vistas\\pruebita.txt";
+        
+        //objeto clase ordenar numro
         OrdernarNumeros on = new OrdernarNumeros();
+        
+        //objeto clase leer txt
         LeerTxt lt = new LeerTxt();
         
+        //datos en array extraidos del txt se asigna a variable arrayData
         arrayData = lt.extraerData(URL);
-//            lt.extraerData(URL);
+        
+        //función que ordena array de numeros
         on.organizarMenorMayor(arrayData);
         
     }
