@@ -12,46 +12,34 @@ package controladores;
 public class OrdernarNumeros {
 
     public void organizarMenorMayor(int[] listaNumeros) {
-        int temporal = 0;
 
-        //burbuja
-//        for (int i = 0; i < listaNumeros.length; i++) {
-//            for (int j = 1; j < (listaNumeros.length - i); j++) {
-//                if (listaNumeros[j - 1] > listaNumeros[j]) {
-//                    temporal = listaNumeros[j - 1];
-//                    listaNumeros[j - 1] = listaNumeros[j];
-//                    listaNumeros[j] = temporal;
-//                }
-//            }
-//        }
-//        System.out.printf(Arrays.toString(a));
-
-        //por selección
-//        for (int i = 0; i < listaNumeros.length; i++) {
-//            for (int j = i; j < listaNumeros.length; j++) {
-//                if (listaNumeros[i] > listaNumeros[j]) {
-//                    Integer aux = listaNumeros[j];
-//                    listaNumeros[j] = listaNumeros[i];
-//                    listaNumeros[i] = aux;
-//                }
-//            }
-//        }
-
-
-        //Ordenamiento por inserción
-        for (int i = 1; i < listaNumeros.length; i++) {
-            Integer aux = listaNumeros[i];
-            int j = i - 1;
-            while (j >= 0 && listaNumeros[j] > aux) {
-                listaNumeros[j + 1] = listaNumeros[j];
-                j--;
+        //shell
+        int salto,i,j,k,auxiliar;
+        salto=listaNumeros.length/2;
+        while(salto>0){
+            for (i = salto;  i<listaNumeros.length; i++) {
+                j=i-salto;
+                while(j>=0){
+                    k=j+salto;
+                    if(listaNumeros[j]<=listaNumeros[k]){
+                        j=-1;
+                    }else{
+                        auxiliar = listaNumeros[j];
+                        listaNumeros[j] = listaNumeros[k];
+                        listaNumeros[k] = auxiliar;
+                        j -= salto;
+                    }
+                }
             }
-            listaNumeros[j + 1] = aux;
+            salto=salto/2;
         }
 
-        for (int i = 0; i < listaNumeros.length; i++) {
-            System.out.println("posición: " + i + " == " + listaNumeros[i]);
+
+        for (int h = 0; h < listaNumeros.length; h++) {
+            System.out.println("posición: " + h + " == " + listaNumeros[h]);
         }
+
     }
-
+    
+    
 }
