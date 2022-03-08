@@ -10,8 +10,10 @@ package controladores;
  * @author desar
  */
 public class OrdernarNumeros {
+    
 
-    public void organizarMenorMayor(int[] listaNumeros) {
+    public int[] organizarMenorMayor(int[] listaNumeros) {
+//    public int[] organizarMenorMayor(int[] listaNumeros) {
 
         //shell
         int salto,i,j,k,auxiliar;
@@ -34,10 +36,7 @@ public class OrdernarNumeros {
             salto=salto/2;
         }
 
-
-        for (int h = 0; h < listaNumeros.length; h++) {
-            System.out.println("posición: " + h + " == " + listaNumeros[h]);
-        }
+        return listaNumeros;
 
     }
     
